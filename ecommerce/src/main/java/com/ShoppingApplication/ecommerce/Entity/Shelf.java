@@ -9,8 +9,6 @@ public class Shelf {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     private String productId;
     private double relevancyScore;
 
