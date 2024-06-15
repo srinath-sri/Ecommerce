@@ -1,18 +1,16 @@
 package com.ShoppingApplication.ecommerce.Controller;
 
-import com.ShoppingApplication.ecommerce.Dto.ProductMetadata;
-import com.ShoppingApplication.ecommerce.Dto.ShopperProductList;
 import com.ShoppingApplication.ecommerce.Entity.Product;
 import com.ShoppingApplication.ecommerce.Entity.Shelf;
 import com.ShoppingApplication.ecommerce.Entity.Shopper;
 import com.ShoppingApplication.ecommerce.Exception.ShopperNotFoundException;
 import com.ShoppingApplication.ecommerce.Service.ShopperService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
