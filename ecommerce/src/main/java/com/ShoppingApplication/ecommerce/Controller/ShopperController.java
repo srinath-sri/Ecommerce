@@ -18,6 +18,7 @@ public class ShopperController {
     @PostMapping("/shopper")
     public ResponseEntity<String> saveShopperData(@RequestBody Shopper shopper) {
         String shopperId = shopper.getShopperId();
+        System.out.println(shopperId);
 
         // Check if shopperId already exists or handle it as per your requirement
         if (shopperService.exists(shopperId)) {

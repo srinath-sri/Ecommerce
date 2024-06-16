@@ -8,7 +8,6 @@ import lombok.Data;
 public class Shelf {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String productId;
     private double relevancyScore;
 
