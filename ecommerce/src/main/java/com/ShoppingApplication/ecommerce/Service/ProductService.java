@@ -15,7 +15,7 @@ public class ProductService {
 
     public List<Product> getProductsByShopper(String shopperId, String category, String brand, int limit) {
 
-        int maxLimit = Math.min(limit, 100); // Ensure limit does not exceed 100
+        int maxLimit = Math.min(limit, 100); // for better pagination ensuring limit not exceed 100
 
         return productRepository.findByFilters(category, brand, PageRequest.of(0, maxLimit));
     }

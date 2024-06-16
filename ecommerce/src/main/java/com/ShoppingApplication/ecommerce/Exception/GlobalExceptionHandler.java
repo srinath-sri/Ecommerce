@@ -32,12 +32,4 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    // Handle MethodArgumentNotValidException for request body validation errors
-
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-                                                                  HttpHeaders headers,
-                                                                  HttpStatus status, WebRequest request) {
-        String errorMessage = "Validation error";
-        return new ResponseEntity<>(errorMessage, HttpStatus.BAD_REQUEST);
-    }
 }

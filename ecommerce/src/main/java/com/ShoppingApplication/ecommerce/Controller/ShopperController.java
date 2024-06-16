@@ -17,20 +17,19 @@ public class ShopperController {
 
     @PostMapping("/shopper")
     public ResponseEntity<String> saveShopperData(@RequestBody Shopper shopper) {
-        String shopperId = shopper.getShopperId();
-        System.out.println(shopperId);
 
-        // Check if shopperId already exists or handle it as per your requirement
+        // To cherck if shopperId already exists or not
+        String shopperId = shopper.getShopperId();
+
         if (shopperService.exists(shopperId)) {
             throw new ShopperNotFoundException("Shopper with ID " + shopperId + " already exists.");
         }
 
-        // Set shopperId for each shelf item
+        // Setting  shopperId for each shelf item
         for (Shelf shelfItem : shopper.getShelf()) {
             shelfItem.setShopper(shopper);
         }
-
-        // Save the shopper
+        //service call to save shopper data
         shopperService.saveShopperData(shopper);
         return ResponseEntity.ok("Shopper data saved successfully");
     }
